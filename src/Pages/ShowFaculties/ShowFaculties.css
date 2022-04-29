@@ -282,3 +282,10 @@
   background-color: #f9004d;
   border: 2px solid #f9004d;
 }
+
+.commonBorder {
+  background: #ff4a57;
+  height: 3px;
+  width: 100px;
+  margin: 30px auto;
+}

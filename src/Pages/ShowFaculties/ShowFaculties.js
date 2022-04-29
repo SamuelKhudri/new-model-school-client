@@ -21,6 +21,7 @@ const ShowFaculties = (props) => {
                             <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#fc890a' }}>*{school}</h3>
                         </div>
                         <div>
+                            <h4 style={{ color: '#fc890a' }}>Research-review</h4>
                             <Rating
                                 initialRating={rating}
                                 emptySymbol="far fa-star icon-color"

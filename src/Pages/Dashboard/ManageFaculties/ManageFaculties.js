@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 // import imgba from '../../../image/logo.jpg';
-const AllProducts = () => {
+const ManageFaculties = () => {
     // import state
     const [products, setProducts] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('http://localhost:5000/faculties')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -18,7 +18,7 @@ const AllProducts = () => {
     const handleDelproducts = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `http://localhost:5000/faculties/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -41,11 +41,8 @@ const AllProducts = () => {
             {/* <Button variant="contained" onClick={() => handleDelproducts(product._id)} >Delete</Button> */}
             <div className="container p-5 ">
                 <div className="p-5">
-                    <h3 style={{ color: 'tomato' }}>
-                        Most Wanted Products
-                    </h3>
                     <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '60px', textAlign: 'center' }}>
-                        Popular products
+                        All Available Faculties
                     </h1>
                     <div style={{ paddingBottom: "10px" }} className="commonBorder"></div>
                 </div>
@@ -65,12 +62,16 @@ const AllProducts = () => {
                                         <div className="contentBx">
                                             <h2 style={{ color: '#f9004d', fontWeight: 'bold', fontSize: "30px" }} >{product.name}</h2>
                                             <div className="size">
-                                                <h3>{product.summery}</h3>
+                                                <h3>{product.school}</h3>
+                                            </div>
+                                            <div className="size">
+                                                <h3>{product.durations} Teachers:{product.teachers}</h3>
                                             </div>
                                             <div className="size">
                                                 <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#fc890a' }}>${product.cost}</h3>
                                             </div>
                                             <div>
+                                                <h4 style={{ color: '#fc890a' }}>thesis-review</h4>
                                                 <Rating
                                                     initialRating={product.rating}
                                                     emptySymbol="far fa-star icon-color"
@@ -78,8 +79,10 @@ const AllProducts = () => {
                                                     readonly
                                                 />
                                             </div>
-                                            <Link to='/public'><button onClick={() => handleDelproducts(product._id)} className="button-29 pt-2">Delete</button>
-                                            </Link>
+                                            <button onClick={() => handleDelproducts(product._id)} className="button-29 pt-2">Delete</button>
+                                            {/* <Button variant="contained" onClick={() => handleDelproducts(product._id)} >Celete</Button> */}
+                                            {/* <Link to='/public'><button onClick={() => handleDelproducts(product._id)} className="button-29 pt-2">Delete</button>
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </div>
@@ -93,4 +96,4 @@ const AllProducts = () => {
     );
 };
 
-export default AllProducts;
+export default ManageFaculties;

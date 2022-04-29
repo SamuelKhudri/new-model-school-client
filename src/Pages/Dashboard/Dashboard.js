@@ -23,10 +23,10 @@ import DashHome from './DashHome/DashHome';
 import Review from '../Review/Review';
 import Payment from '../Payment/Payment';
 import MyOrder from '../MyOrder/MyOrder';
-import AddProducts from '../AddProducts/AddProducts';
+import AddFaculty from '../AddFaculty/AddFaculty';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManAllorders from './ManAllOrders/ManAllorders';
-import ManageProducts from './ManageProducts/ManageProducts';
+import ManageFaculties from './ManageFaculties/ManageFaculties';
 
 
 const drawerWidth = 200;
@@ -54,8 +54,8 @@ function Dashboard(props) {
 
                     </Link>
                     <br /><br />
-                    <Link to={`${url}/manageproducts`}>
-                        <Button variant="contained" color="success">Manage-Products</Button>
+                    <Link to={`${url}/managefaculties`}>
+                        <Button variant="contained" color="success">Manage-Faculties</Button>
 
                     </Link>
                     <br /><br />
@@ -64,8 +64,12 @@ function Dashboard(props) {
 
                     </Link>
                     <br /><br />
-                    <Link to={`${url}/addproduct`}>
-                        <Button variant="contained" color="success">Add-Products</Button>
+                    <Link to={`${url}/review`}>
+                        <Button variant="contained" color="success">GiveReview</Button>
+                    </Link>
+                    <br /><br />
+                    <Link to={`${url}/addfaculty`}>
+                        <Button variant="contained" color="success">Add-Faculty</Button>
 
                     </Link>
                     <br /><br />
@@ -88,10 +92,6 @@ function Dashboard(props) {
 
                         </Link>
                         <br /><br />
-                        <Link to={`${url}/review`}>
-                            <Button variant="contained" color="success">GiveReview</Button>
-
-                        </Link>
                     </Box>
             }
             <Divider />
@@ -181,14 +181,14 @@ function Dashboard(props) {
                         <Route path={`${path}/makeadmin`}>
                             <MakeAdmin></MakeAdmin>
                         </Route>
-                        <Route path={`${path}/addproduct`}>
-                            <AddProducts></AddProducts>
+                        <Route path={`${path}/addfaculty`}>
+                            <AddFaculty></AddFaculty>
                         </Route>
                         <Route path={`${path}/payment/:orderId`}>
                             <Payment></Payment>
                         </Route>
-                        <Route path={`${path}/manageproducts`}>
-                            <ManageProducts></ManageProducts>
+                        <Route path={`${path}/managefaculties`}>
+                            <ManageFaculties></ManageFaculties>
                         </Route>
                         <Route path={`${path}/myorder`}>
                             <MyOrder></MyOrder>

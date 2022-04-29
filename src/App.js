@@ -14,7 +14,7 @@ import PlaceAdmit from './Pages/PlaceAdmit/PlaceAdmit';
 import Login from './Pages/LoginPage/Login/Login';
 import Register from './Pages/LoginPage/Register/Register';
 import PrivateRoute from './Pages/LoginPage/PrivateRoute/PrivateRoute';
-// import Dashboard from './Pages/Dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard';
 // import OrderUpdate from './Pages/Dashboard/OrderUpdata/OrderUpdate';
 // import MyOrder from './Pages/MyOrder/MyOrder';
 function App() {
@@ -29,9 +29,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            {/* <PrivateRoute path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute> */}
+            </PrivateRoute>
             {/* <PrivateRoute path="/dashboard/myorder">
               <MyOrder></MyOrder>
             </PrivateRoute> */}
