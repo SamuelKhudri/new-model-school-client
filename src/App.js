@@ -7,11 +7,10 @@ import {
 } from "react-router-dom";
 
 import AuthProvider from './Context/AuthProvider/AuthProvider';
-// import Home from './Pages/Home/Home/Home';
 import Notfound from './Pages/Notfound/Notfound';
 import Home from './Pages/Home/Home';
 import AllFaculties from './Pages/AllFaculties/AllFaculties';
-// import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import PlaceAdmit from './Pages/PlaceAdmit/PlaceAdmit';
 import Login from './Pages/LoginPage/Login/Login';
 import Register from './Pages/LoginPage/Register/Register';
 import PrivateRoute from './Pages/LoginPage/PrivateRoute/PrivateRoute';
@@ -45,9 +44,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            {/* <PrivateRoute path="/placeorder/:id">
-              <PlaceOrder></PlaceOrder>
-            </PrivateRoute> */}
+            <PrivateRoute path="/placeadmit/:id">
+              <PlaceAdmit></PlaceAdmit>
+            </PrivateRoute>
             <PrivateRoute path="/allfaculties">
               <AllFaculties></AllFaculties>
             </PrivateRoute>

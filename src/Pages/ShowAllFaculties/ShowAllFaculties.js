@@ -28,7 +28,7 @@ const ShowAllFaculties = (props) => {
                                 readonly
                             />
                         </div>
-                        <Link to={`/placeorder/${_id}`}><button className="button-29 pt-2">Register</button>
+                        <Link to={`/placeadmit/${_id}`}><button className="button-29 pt-2">Register</button>
                         </Link>
                     </div>
                 </div>
