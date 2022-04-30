@@ -22,7 +22,7 @@ const AddFaculty = () => {
     return (
         <div className="container" >
             <div className="add-service">
-                <h2 style={{ color: 'white', textAlign: 'center' }}>Add Products</h2>
+                <h2 style={{ color: 'white', textAlign: 'center' }}>Add Faculty</h2>
                 <form id="formcolor" className="mt-5" onSubmit={handleSubmit(onSubmit)}>
                     <input type="text" className="mt-3" {...register("name")} placeholder="Department name" />
                     <input type="text" {...register("school")} placeholder="SchoolName" />

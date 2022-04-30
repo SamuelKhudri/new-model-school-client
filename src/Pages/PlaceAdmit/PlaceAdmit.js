@@ -85,8 +85,14 @@ const PlaceAdmit = () => {
                         <h4>Your joining year</h4>
                         <input style={{ lineHeight: "40px", width: "75%" }} placeholder="JoinYear" defaultValue="" {...register("joinyear")} />
 
+                        <h4>Your Running year</h4>
+                        <input style={{ lineHeight: "40px", width: "75%" }} placeholder="JoinYear to running" defaultValue="" {...register("runYear")} />
+
                         <h4>Contact number</h4>
                         <input style={{ lineHeight: "40px", width: "75%" }} placeholder="phone number" defaultValue="" {...register("phone")} />
+
+                        <h4>Course Duration</h4>
+                        <input style={{ lineHeight: "40px", width: "75%" }} defaultValue={item.durations} {...register("durations", { required: true })} />
 
                         <h4>Academic fees</h4>
                         <input style={{ lineHeight: "40px", width: "75%" }} defaultValue={item.cost} {...register("cost", { required: true })} />

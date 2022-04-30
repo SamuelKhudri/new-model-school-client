@@ -22,7 +22,7 @@ import useAuth from '../../hooks/useAuth';
 import DashHome from './DashHome/DashHome';
 import Review from '../Review/Review';
 import Payment from '../Payment/Payment';
-import MyOrder from '../MyOrder/MyOrder';
+import MyProfile from '../MyProfile/MyProfile';
 import AddFaculty from '../AddFaculty/AddFaculty';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManAllstudents from './ManAllstudents/ManAllstudents';
@@ -87,8 +87,8 @@ function Dashboard(props) {
 
                         </Link> */}
 
-                        <Link to={`${url}/myorder`}>
-                            <Button variant="contained" color="success">Your Order</Button>
+                        <Link to={`${url}/myprofile`}>
+                            <Button variant="contained" color="success">Your Profile</Button>
 
                         </Link>
                         <br /><br />
@@ -190,8 +190,8 @@ function Dashboard(props) {
                         <Route path={`${path}/managefaculties`}>
                             <ManageFaculties></ManageFaculties>
                         </Route>
-                        <Route path={`${path}/myorder`}>
-                            <MyOrder></MyOrder>
+                        <Route path={`${path}/myProfile`}>
+                            <MyProfile></MyProfile>
                         </Route>
                         <Route path={`${path}/manageallstudents`}>
                             <ManAllstudents></ManAllstudents>

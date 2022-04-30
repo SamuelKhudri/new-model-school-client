@@ -12,16 +12,18 @@ const Payment = () => {
     const { orderId } = useParams()
     const [payment, setPayment] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${orderId}`)
+        fetch(`http://localhost:5000/students/${orderId}`)
             .then(res => res.json())
             .then(data => setPayment(data));
     }, [orderId]);
     return (
 
         <div style={{ color: 'white', textAlign: 'center' }}>
-            <h1 >Please Complete Payment for: <span>{payment.productName}</span></h1>
-            <h4>{orderId}</h4>
-            <h4>Pay:${payment.cost}</h4>
+            <h1 >Please Complete Payment: <span>{payment.name}</span></h1>
+            <h4>For Academic Year:<span> {payment.runYear} </span></h4>
+            {/* <h4>{orderId}</h4> */}
+            <h4>Your registration number: {payment.registerId}</h4>
+            <h4>Pay: $ {payment.cost}</h4>
             {payment?.cost &&
                 <Elements stripe={stripePromise}>
                     <CheckoutForm payment={payment}></CheckoutForm>

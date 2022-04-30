@@ -95,7 +95,7 @@ const CheckoutForm = ({ payment }) => {
             last4: paymentMethod.card.last4,
             transaction: paymentIntent.client_secret.slice('_secret')[0]
          }
-         const url = `http://localhost:5000/orders/${_id}`;
+         const url = `http://localhost:5000/students/${_id}`;
          fetch(url, {
             method: 'PUT',
             headers: {
@@ -129,7 +129,7 @@ const CheckoutForm = ({ payment }) => {
             {processing ? <CircularProgress></CircularProgress> : <button className="btn-submit" type="submit" disabled={!stripe || success}>
                Pay ${cost}
             </button>}
-            {/* rgb(240, 22, 149) */}
+
          </form>
          {
             error && <h4 style={{ color: 'red', fontWeight: '500', marginTop: '30px' }}>{error}</h4>
