@@ -15,7 +15,7 @@ import Login from './Pages/LoginPage/Login/Login';
 import Register from './Pages/LoginPage/Register/Register';
 import PrivateRoute from './Pages/LoginPage/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
-// import OrderUpdate from './Pages/Dashboard/OrderUpdata/OrderUpdate';
+import StudentsUpdate from './Pages/Dashboard/StudentsUpdate/StudentsUpdate';
 // import MyOrder from './Pages/MyOrder/MyOrder';
 function App() {
   return (
@@ -35,9 +35,9 @@ function App() {
             {/* <PrivateRoute path="/dashboard/myorder">
               <MyOrder></MyOrder>
             </PrivateRoute> */}
-            {/* <PrivateRoute path="/orders/update/:id">
-              <OrderUpdate></OrderUpdate>
-            </PrivateRoute> */}
+            <PrivateRoute path="/students/update/:id">
+              <StudentsUpdate></StudentsUpdate>
+            </PrivateRoute>
             <Route path="/register">
               <Register></Register>
             </Route>

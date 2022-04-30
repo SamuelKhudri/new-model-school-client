@@ -25,7 +25,7 @@ import Payment from '../Payment/Payment';
 import MyOrder from '../MyOrder/MyOrder';
 import AddFaculty from '../AddFaculty/AddFaculty';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
-import ManAllorders from './ManAllOrders/ManAllorders';
+import ManAllstudents from './ManAllstudents/ManAllstudents';
 import ManageFaculties from './ManageFaculties/ManageFaculties';
 
 
@@ -59,8 +59,8 @@ function Dashboard(props) {
 
                     </Link>
                     <br /><br />
-                    <Link to={`${url}/manageallorders`}>
-                        <Button variant="contained" color="success">Manage-Orders</Button>
+                    <Link to={`${url}/manageallstudents`}>
+                        <Button variant="contained" color="success">Manage-Students</Button>
 
                     </Link>
                     <br /><br />
@@ -193,8 +193,8 @@ function Dashboard(props) {
                         <Route path={`${path}/myorder`}>
                             <MyOrder></MyOrder>
                         </Route>
-                        <Route path={`${path}/manageallorders`}>
-                            <ManAllorders></ManAllorders>
+                        <Route path={`${path}/manageallstudents`}>
+                            <ManAllstudents></ManAllstudents>
                         </Route>
                         <Route path={`${path}/review`}>
                             <Review></Review>

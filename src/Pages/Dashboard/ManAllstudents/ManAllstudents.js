@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import './mangeO.css';
+import './mangeS.css';
 // import font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMobile, faEnvelope, } from '@fortawesome/free-solid-svg-icons'
@@ -10,12 +10,12 @@ const element1 = <FontAwesomeIcon icon={faMobile} />
 const element2 = <FontAwesomeIcon icon={faEnvelope} />
 
 
-const ManAllorders = () => {
+const ManAllstudents = () => {
 
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders/all')
+        fetch('http://localhost:5000/students/all')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
@@ -24,7 +24,7 @@ const ManAllorders = () => {
     const handleDelorder = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/all/${id}`;
+            const url = `http://localhost:5000/students/all/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -46,11 +46,11 @@ const ManAllorders = () => {
             <Container>
 
                 <Typography style={{ color: "white" }} sx={{ fontWeight: 'bold', m: 2, color: 'success.main' }} variant="h5" component="div">
-                    Your Order : {orders.length}
+                    Totall Students : {orders.length}
                 </Typography>
 
                 <Typography style={{ color: "white" }} sx={{ fontWeight: 'bold', m: 5 }} variant="h4" component="div">
-                    Your All Orders
+                    Your All Students
                 </Typography>
                 {/* sx={{ bgcolor: 'warning.main' }} */}
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -63,21 +63,19 @@ const ManAllorders = () => {
                                 <Card sx={{ minWidth: 275, border: 2, boxShadow: 5, }}>
                                     <CardContent>
 
-                                        <Typography variant="h5" component="div">
-                                            {order.productName}
+                                        <Typography style={{ color: "#f01695" }} variant="h5" component="div">
+                                            {order.name}
                                         </Typography>
                                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                            Name: {order.username}
+                                            Name: <span style={{ color: "#f01695" }}>{order.registerId}</span>
                                         </Typography>
                                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                            {order.email}
+                                            {element2} {order.email}
                                         </Typography>
                                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                            {order.orderid}
+                                            Departmet: {order.subjectname}
                                         </Typography>
-                                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                            {element2} {order.address}
-                                        </Typography>
+
                                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
                                             {element1}Phone: {order.phone}
                                         </Typography>
@@ -86,7 +84,7 @@ const ManAllorders = () => {
 
                                 </Card>
                                 <button className="btn" onClick={() => handleDelorder(order._id)} >Cancel</button>
-                                <Link to={`/orders/update/${order._id}`}><button className="btn">update</button></Link>
+                                <Link to={`/students/update/${order._id}`}><button className="btn">update</button></Link>
                             </Box>
                         </Grid>
                         )
@@ -96,4 +94,4 @@ const ManAllorders = () => {
     );
 };
 
-export default ManAllorders;
+export default ManAllstudents;

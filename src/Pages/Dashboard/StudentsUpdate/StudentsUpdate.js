@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import "./UpdateOrder.css"
-const OrderUpdate = () => {
+import "./UpdateStudents.css";
+const StudentsUpdate = () => {
     const [user, setUser] = useState({})
     const { id } = useParams();
 
@@ -10,7 +10,7 @@ const OrderUpdate = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `http://localhost:5000/students/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data))
@@ -22,24 +22,24 @@ const OrderUpdate = () => {
 
     const hanNameChange = e => {
         const updateName = e.target.value;
-        const updateUser = { username: updateName, address: user.address }
+        const updateUser = { name: updateName, email: user.email }
         // console.log(e.target.value); 
         setUser(updateUser);
     }
 
 
     // handle change email input 
-    const hanAddressChange = e => {
-        const updateAddress = e.target.value;
+    const hanEmailChange = e => {
+        const updateEmail = e.target.value;
         // const updateUser = { ...user }; 
-        const updateUser = { username: user.username, address: updateAddress }
+        const updateUser = { name: user.name, email: updateEmail }
         setUser(updateUser);
     }
 
 
     // update user function handle 
     const handleUpdataUser = e => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `http://localhost:5000/students/update/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -61,17 +61,17 @@ const OrderUpdate = () => {
         <div className='up-bg'>
             <div className="orderUpdate container p-5">
                 <center>
-                    <h1 id="h1provided"> User Name: {user.username}</h1>
+                    <h1 id="h1provided"> User Name: {user.name}</h1>
                     <h2 id="h1provided">User Id: {id}</h2>
                     <div className="form-update">
                         <form onSubmit={handleUpdataUser}>
-                            <span>name</span> <br /> <input className="p-2 m-3" type="text" onChange={hanNameChange} value={user.username} /><br />
+                            <span>name</span> <br /> <input className="p-2 m-3" type="text" onChange={hanNameChange} value={user.name} /><br />
 
-                            <span>Product name</span><br /> <input className="p-2 m-3" type="text" defaultValue={user.productName} /><br />
+                            <span>Product name</span><br /> <input className="p-2 m-3" type="text" onChange={hanEmailChange} value={user.email} /><br />
 
-                            <span>Address</span><br /><input className="p-2 m-3" type="text" onChange={hanAddressChange} value={user.address} /><br />
+                            <span>Address</span><br /><input className="p-2 m-3" type="text" value={user.subjectname} /><br />
 
-                            <span>Phone</span><br /> <input className="p-2 m-3" type="text" defaultValue={user.phone} /><br />
+                            <span>Phone</span><br /> <input className="p-2 m-3" type="text" value={user.phone} /><br />
 
 
 
@@ -83,4 +83,4 @@ const OrderUpdate = () => {
         </div>
     );
 };
-export default OrderUpdate;
+export default StudentsUpdate;
