@@ -6,12 +6,14 @@ import Contact from '../Contact/Contact';
 import Faculties from '../Faculties/Faculties';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
+import ShowNotice from '../ShowNotice/ShowNotice';
 
 const Home = () => {
     return (
         <div className=''>
             <Navbar></Navbar>
             <Banner></Banner>
+            <ShowNotice></ShowNotice>
             {/* <Categories></Categories> */}
             <Faculties></Faculties>
             <Contact></Contact>

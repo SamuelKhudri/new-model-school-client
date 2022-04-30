@@ -20,7 +20,7 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
 import DashHome from './DashHome/DashHome';
-import Review from '../Review/Review';
+import Notice from '../Notice/Notice';
 import Payment from '../Payment/Payment';
 import MyProfile from '../MyProfile/MyProfile';
 import AddFaculty from '../AddFaculty/AddFaculty';
@@ -64,8 +64,8 @@ function Dashboard(props) {
 
                     </Link>
                     <br /><br />
-                    <Link to={`${url}/review`}>
-                        <Button variant="contained" color="success">GiveReview</Button>
+                    <Link to={`${url}/notice`}>
+                        <Button variant="contained" color="success">Write-Notice</Button>
                     </Link>
                     <br /><br />
                     <Link to={`${url}/addfaculty`}>
@@ -196,8 +196,8 @@ function Dashboard(props) {
                         <Route path={`${path}/manageallstudents`}>
                             <ManAllstudents></ManAllstudents>
                         </Route>
-                        <Route path={`${path}/review`}>
-                            <Review></Review>
+                        <Route path={`${path}/notice`}>
+                            <Notice></Notice>
                         </Route>
 
                     </Switch>
