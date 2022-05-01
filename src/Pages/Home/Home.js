@@ -7,6 +7,7 @@ import Faculties from '../Faculties/Faculties';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import ShowNotice from '../ShowNotice/ShowNotice';
+import ShowRoutine from '../ShowRoutine/ShowRoutine';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <ShowNotice></ShowNotice>
+            <ShowRoutine></ShowRoutine>
             {/* <Categories></Categories> */}
             <Faculties></Faculties>
             <Contact></Contact>

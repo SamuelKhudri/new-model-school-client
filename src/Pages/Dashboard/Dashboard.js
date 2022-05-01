@@ -21,6 +21,7 @@ import { Button } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
 import DashHome from './DashHome/DashHome';
 import Notice from '../Notice/Notice';
+import Routine from './Routine/Routine';
 import Payment from '../Payment/Payment';
 import MyProfile from '../MyProfile/MyProfile';
 import AddFaculty from '../AddFaculty/AddFaculty';
@@ -54,6 +55,20 @@ function Dashboard(props) {
 
                     </Link>
                     <br /><br />
+                    <Link to={`${url}/addfaculty`}>
+                        <Button variant="contained" color="success">Add-Faculty</Button>
+
+                    </Link>
+                    <br /><br />
+                    <Link to={`${url}/routine`}>
+                        <Button variant="contained" color="success">Add-Routine</Button>
+                    </Link>
+                    <br /><br />
+
+                    <Link to={`${url}/notice`}>
+                        <Button variant="contained" color="success">Write-Notice</Button>
+                    </Link>
+                    <br /><br />
                     <Link to={`${url}/managefaculties`}>
                         <Button variant="contained" color="success">Manage-Faculties</Button>
 
@@ -61,15 +76,6 @@ function Dashboard(props) {
                     <br /><br />
                     <Link to={`${url}/manageallstudents`}>
                         <Button variant="contained" color="success">Manage-Students</Button>
-
-                    </Link>
-                    <br /><br />
-                    <Link to={`${url}/notice`}>
-                        <Button variant="contained" color="success">Write-Notice</Button>
-                    </Link>
-                    <br /><br />
-                    <Link to={`${url}/addfaculty`}>
-                        <Button variant="contained" color="success">Add-Faculty</Button>
 
                     </Link>
                     <br /><br />
@@ -198,6 +204,9 @@ function Dashboard(props) {
                         </Route>
                         <Route path={`${path}/notice`}>
                             <Notice></Notice>
+                        </Route>
+                        <Route path={`${path}/routine`}>
+                            <Routine></Routine>
                         </Route>
 
                     </Switch>
