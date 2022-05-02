@@ -52,6 +52,12 @@ const ManAllstudents = () => {
                 <Typography style={{ color: "white" }} sx={{ fontWeight: 'bold', m: 5 }} variant="h4" component="div">
                     Your All Students
                 </Typography>
+                <div style={{ marginBottom: "20px" }} className='d-flex'>
+                    <form className="d-flex mt-3">
+                        <input style={{ height: "50px", width: "400px" }} className="form-control me-2" type="search" placeholder="Search mates by email" aria-label="Search" />
+                        <button className="btn-search btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
                 {/* sx={{ bgcolor: 'warning.main' }} */}
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {

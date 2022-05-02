@@ -18,6 +18,9 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import StudentsUpdate from './Pages/Dashboard/StudentsUpdate/StudentsUpdate';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import ShowTeacher from './Pages/ShowTeacher/ShowTeacher';
+import SeeSubjects from './Pages/Dashboard/SeeSubjects/SeeSubjects';
+import SeeClassmates from './Pages/Dashboard/SeeClassmates/SeeClassmates';
+import ChatInterface from './Pages/ChatInterface/ChatInterface';
 function App() {
   return (
     <div className="App">
@@ -38,6 +41,15 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/dashboard/myprofile">
               <MyProfile></MyProfile>
+            </PrivateRoute>
+            <PrivateRoute path="/subjects">
+              <SeeSubjects></SeeSubjects>
+            </PrivateRoute>
+            <PrivateRoute path="/chat/:id">
+              <ChatInterface></ChatInterface>
+            </PrivateRoute>
+            <PrivateRoute path="/seeclassmates">
+              <SeeClassmates></SeeClassmates>
             </PrivateRoute>
             <PrivateRoute path="/students/update/:id">
               <StudentsUpdate></StudentsUpdate>

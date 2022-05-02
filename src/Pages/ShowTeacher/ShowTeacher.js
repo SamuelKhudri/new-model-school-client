@@ -15,7 +15,13 @@ const ShowTeacher = () => {
         <div style={{ backgroundColor: "#212335", textAlign: 'center' }}>
             <div className=" p-5 ">
                 <h1 style={{ color: "white" }} className='text-center'>All Teachers here</h1>
-                <div className='row'>
+                <div className='d-flex'>
+                    <form className="d-flex mt-5">
+                        <input style={{ height: "50px", width: "400px" }} className="form-control me-2" type="search" placeholder="Search by email" aria-label="Search" />
+                        <button className="btn-search btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                <div className='row mt-3'>
 
                     {
                         review.map(revi =>

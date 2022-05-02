@@ -29,6 +29,7 @@ import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManAllstudents from './ManAllstudents/ManAllstudents';
 import ManageFaculties from './ManageFaculties/ManageFaculties';
 import AddTeacher from './AddTeacher/AddTeacher';
+import AddSubjects from './AddSubjects/AddSubjects';
 
 
 const drawerWidth = 200;
@@ -82,7 +83,10 @@ function Dashboard(props) {
                     <br /><br />
                     <Link to={`${url}/manageallstudents`}>
                         <Button variant="contained" color="success">Manage-Students</Button>
-
+                    </Link>
+                    <br /><br />
+                    <Link to={`${url}/managesubjects`}>
+                        <Button variant="contained" color="success">Manage-Subjects</Button>
                     </Link>
                     <br /><br />
                     <br /><br />
@@ -94,11 +98,16 @@ function Dashboard(props) {
 
                         </Link>
                         <br /><br />
-                        {/* <Link to={`${url}/payment`}>
-                            <Button variant="contained" color="success">Payment</Button>
+                        <Link to="/subjects">
+                            <Button variant="contained" color="success">See-Subjects</Button>
 
-                        </Link> */}
+                        </Link>
+                        <br /><br />
+                        <Link to="/seeclassmates">
+                            <Button variant="contained" color="success">See-classmates</Button>
 
+                        </Link>
+                        <br /><br />
                         <Link to={`${url}/myprofile`}>
                             <Button variant="contained" color="success">Your Profile</Button>
 
@@ -205,8 +214,12 @@ function Dashboard(props) {
                         <Route path={`${path}/myProfile`}>
                             <MyProfile></MyProfile>
                         </Route>
+
                         <Route path={`${path}/manageallstudents`}>
                             <ManAllstudents></ManAllstudents>
+                        </Route>
+                        <Route path={`${path}/managesubjects`}>
+                            <AddSubjects></AddSubjects>
                         </Route>
                         <Route path={`${path}/manageteachers`}>
                             <AddTeacher></AddTeacher>
