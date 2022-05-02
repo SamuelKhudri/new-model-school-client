@@ -1,20 +1,20 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Rating from 'react-rating';
 
-const ShowReview = () => {
+
+const ShowTeacher = () => {
     const [review, setReview] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('http://localhost:5000/teacher')
             .then(res => res.json())
             .then(data => setReview(data))
     }, []);
     return (
         <div style={{ backgroundColor: "#212335", textAlign: 'center' }}>
             <div className=" p-5 ">
-                <h1 style={{ color: "white" }} className='text-center'>Our Customers Review</h1>
+                <h1 style={{ color: "white" }} className='text-center'>All Teachers here</h1>
                 <div className='row'>
 
                     {
@@ -24,17 +24,11 @@ const ShowReview = () => {
                                 <div style={{ marginTop: "5px", backgroundColor: 'rgb(20, 15, 37)' }} class="card">
                                     < img style={{ borderRadius: "50%", height: "230px", width: "60%", margin: "auto", marginTop: "5px" }} class="card-img-top" src={revi.image} alt="" />
                                     <div class="card-body">
-                                        <h5 style={{ color: '#f9004d' }} class="card-title">{revi.name}</h5>
-                                        <p style={{ color: 'white' }} class="card-text">{revi.comment}</p >
-                                        <div>
-                                            <Rating
-                                                initialRating={revi.rating}
-                                                emptySymbol="far fa-star icon-color "
-                                                fullSymbol="fas fa-star icon-color "
-                                                readonly
+                                        <h5 style={{ color: '#f9004d' }} class="card-title">Name: {revi.name}</h5>
+                                        <h5 style={{ color: '#f9004d' }} class="card-title">Department: {revi.depname}</h5>
+                                        <p style={{ color: 'white' }} class="card-text">Email: {revi.email}</p >
+                                        <p style={{ color: 'white' }} class="card-text">Wechat: {revi.wechat}</p >
 
-                                            />
-                                        </div>
                                     </div>
                                 </div>
 
@@ -47,4 +41,4 @@ const ShowReview = () => {
     );
 };
 
-export default ShowReview;
+export default ShowTeacher;

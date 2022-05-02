@@ -17,6 +17,7 @@ import PrivateRoute from './Pages/LoginPage/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import StudentsUpdate from './Pages/Dashboard/StudentsUpdate/StudentsUpdate';
 import MyProfile from './Pages/MyProfile/MyProfile';
+import ShowTeacher from './Pages/ShowTeacher/ShowTeacher';
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/teacher">
+              <ShowTeacher></ShowTeacher>
             </PrivateRoute>
             <PrivateRoute path="/dashboard/myprofile">
               <MyProfile></MyProfile>

@@ -28,6 +28,7 @@ import AddFaculty from '../AddFaculty/AddFaculty';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManAllstudents from './ManAllstudents/ManAllstudents';
 import ManageFaculties from './ManageFaculties/ManageFaculties';
+import AddTeacher from './AddTeacher/AddTeacher';
 
 
 const drawerWidth = 200;
@@ -71,6 +72,11 @@ function Dashboard(props) {
                     <br /><br />
                     <Link to={`${url}/managefaculties`}>
                         <Button variant="contained" color="success">Manage-Faculties</Button>
+
+                    </Link>
+                    <br /><br />
+                    <Link to={`${url}/manageteachers`}>
+                        <Button variant="contained" color="success">Manage-Teachers</Button>
 
                     </Link>
                     <br /><br />
@@ -201,6 +207,9 @@ function Dashboard(props) {
                         </Route>
                         <Route path={`${path}/manageallstudents`}>
                             <ManAllstudents></ManAllstudents>
+                        </Route>
+                        <Route path={`${path}/manageteachers`}>
+                            <AddTeacher></AddTeacher>
                         </Route>
                         <Route path={`${path}/notice`}>
                             <Notice></Notice>

@@ -1,7 +1,8 @@
 // import React, { useState, useEffect } from 'react';
-// import { Badge } from "@material-ui/core";
+import { Badge } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-// , ShoppingCartOutlined
+import ChatIcon from '@material-ui/icons/Chat';
+
 // import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth'
@@ -14,7 +15,7 @@ const Navbar = () => {
     // orders fetch based on email because of showing cart
     // const [order, setOrder] = useState([]);
     // useEffect(() => {
-    //     const url = `http://localhost:5000/orders/cart?email=${user.email}`
+    //     const url = `http://localhost:5000/massege/cart?email=${user.email}`
     //     fetch(url)
     //         .then(res => res.json())
     //         .then(data => setOrder(data));
@@ -32,10 +33,13 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#redi-pro">Faculty</a>
+                                    <Link className="nav-link active" aria-current="page" to="/teacher">Teachers</Link>
                                 </li>
                                 {user?.email ? (
                                     < >
+                                        <li className="nav-item">
+                                            <a className="nav-link active" aria-current="page" href="#redi-pro">Faculty</a>
+                                        </li>
                                         <li className="nav-item">
                                             <Link className="nav-link active" aria-current="page" to="/dashboard">Dassboard</Link>
                                         </li>
@@ -45,11 +49,11 @@ const Navbar = () => {
                                         <li className="nav-item">
                                             <Link className="nav-link active" aria-current="page" to="/">"{user.displayName}"</Link>
                                         </li>
-                                        {/* <li className="nav-item">
-                                            <Link className="nav-link active" aria-current="page" to="/dashboard/myorder"><Badge badgeContent={order.length} color="primary">
-                                                <ShoppingCartOutlined style={{ color: "white" }} />
+                                        <li className="nav-item">
+                                            <Link className="nav-link active" aria-current="page" to="/dashboard/mymassege"><Badge badgeContent="3" color="primary">
+                                                <ChatIcon style={{ color: "f01795" }} />
                                             </Badge></Link>
-                                        </li> */}
+                                        </li>
                                     </>
                                 ) : (
 
