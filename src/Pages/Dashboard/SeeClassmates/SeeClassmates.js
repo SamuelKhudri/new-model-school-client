@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import ShowSeeMates from '../../ShowSeeMates/ShowSeeMates';
+
 import "./SeeClass.css";
 const SeeClassmates = () => {
     const [classmates, setClassmates] = useState([])
@@ -15,6 +16,9 @@ const SeeClassmates = () => {
         <div style={{ textAlign: 'center' }}>
             <div className=" p-5 ">
                 <h1 style={{ color: "red" }} className='text-center'>All Classmates here</h1>
+                <h3 style={{ color: 'tomato' }}>
+                    Totall-({classmates.length})
+                </h3>
                 <div style={{ paddingBottom: "8px" }} className="commonBorder"></div>
                 <div className='d-flex'>
                     <form className="d-flex mt-5">
@@ -25,22 +29,11 @@ const SeeClassmates = () => {
                 <div className='row mt-5'>
 
                     {
-                        classmates.map(classmate =>
+                        classmates.map(classmate => <ShowSeeMates
+                            key={classmate.name}
+                            classmate={classmate}
 
-                            <div class="card-deck col-lg-4 col-md-6 col-12">
-                                <div style={{ marginTop: "5px", backgroundColor: 'rgb(20, 15, 37)' }} class="card">
-                                    < img style={{ borderRadius: "50%", height: "230px", width: "60%", margin: "auto", marginTop: "5px" }} class="card-img-top" src={classmate.image} alt="" />
-                                    <div class="card-body">
-                                        <h4 style={{ color: '#f9004d' }} class="card-title">Name: {classmate.name}</h4>
-                                        <h5 style={{ color: '#f9004d' }} class="card-title">Department: {classmate.subjectname}</h5>
-                                        <h5 style={{ color: '#f9004d' }} class="card-title">Join-Year: {classmate.joinyear}</h5>
-                                        <p style={{ color: 'white' }} class="card-text">Email: {classmate.email}</p >
-                                        <p style={{ color: 'white' }} class="card-text">Contact: {classmate.phone}</p >
-                                        <Link className="btn" to={`/chat/${classmate._id}`}>Lets-chat</Link>
-                                    </div>
-                                </div>
-
-                            </div>)
+                        ></ShowSeeMates>)
                     }
 
                 </div>

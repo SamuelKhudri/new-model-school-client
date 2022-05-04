@@ -21,6 +21,9 @@ import ShowTeacher from './Pages/ShowTeacher/ShowTeacher';
 import SeeSubjects from './Pages/Dashboard/SeeSubjects/SeeSubjects';
 import SeeClassmates from './Pages/Dashboard/SeeClassmates/SeeClassmates';
 import ChatInterface from './Pages/ChatInterface/ChatInterface';
+import SeeMasseges from './Pages/SeeMasseges/SeeMasseges';
+import TakeAttendence from './Pages/Dashboard/TakeAttendence/TakeAttendence';
+import GiveMarks from './Pages/Dashboard/GiveMarks/GiveMarks';
 function App() {
   return (
     <div className="App">
@@ -45,8 +48,17 @@ function App() {
             <PrivateRoute path="/subjects">
               <SeeSubjects></SeeSubjects>
             </PrivateRoute>
+            <PrivateRoute path="/attendence">
+              <TakeAttendence></TakeAttendence>
+            </PrivateRoute>
+            <PrivateRoute path="/givemarks">
+              <GiveMarks></GiveMarks>
+            </PrivateRoute>
             <PrivateRoute path="/chat/:id">
               <ChatInterface></ChatInterface>
+            </PrivateRoute>
+            <PrivateRoute path="/yourmasseges">
+              <SeeMasseges></SeeMasseges>
             </PrivateRoute>
             <PrivateRoute path="/seeclassmates">
               <SeeClassmates></SeeClassmates>

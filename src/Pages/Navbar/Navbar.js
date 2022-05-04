@@ -2,6 +2,7 @@
 import { Badge } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import ChatIcon from '@material-ui/icons/Chat';
+import { useEffect, useState } from "react";
 
 // import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -12,14 +13,14 @@ import './Navbar.css';
 const Navbar = () => {
     const { user, logout } = useAuth();
 
-    // orders fetch based on email because of showing cart
-    // const [order, setOrder] = useState([]);
-    // useEffect(() => {
-    //     const url = `http://localhost:5000/massege/cart?email=${user.email}`
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setOrder(data));
-    // }, []);
+    // Masseges fetch based on email because of showing cart
+    const [massege, setMassege] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/masseges?email=${user.email}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setMassege(data));
+    }, []);
     return (
         <div className='nav-p'>
             <div className="navmother">
@@ -50,7 +51,7 @@ const Navbar = () => {
                                             <Link className="nav-link active" aria-current="page" to="/">"{user.displayName}"</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link active" aria-current="page" to="/dashboard/mymassege"><Badge badgeContent="3" color="primary">
+                                            <Link className="nav-link active" aria-current="page" to="/yourmasseges"><Badge badgeContent={massege.length} color="primary">
                                                 <ChatIcon style={{ color: "f01795" }} />
                                             </Badge></Link>
                                         </li>

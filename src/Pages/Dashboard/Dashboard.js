@@ -30,6 +30,7 @@ import ManAllstudents from './ManAllstudents/ManAllstudents';
 import ManageFaculties from './ManageFaculties/ManageFaculties';
 import AddTeacher from './AddTeacher/AddTeacher';
 import AddSubjects from './AddSubjects/AddSubjects';
+import TestScores from './TestScores/TestScores';
 
 
 const drawerWidth = 200;
@@ -89,6 +90,14 @@ function Dashboard(props) {
                         <Button variant="contained" color="success">Manage-Subjects</Button>
                     </Link>
                     <br /><br />
+                    <Link to="/attendence">
+                        <Button variant="contained" color="success">take-attendence</Button>
+                    </Link>
+                    <br /><br />
+                    <Link to="/givemarks">
+                        <Button variant="contained" color="success">Give-Marks</Button>
+                    </Link>
+                    <br /><br />
                     <br /><br />
                 </Box>
                     : <Box>
@@ -105,6 +114,11 @@ function Dashboard(props) {
                         <br /><br />
                         <Link to="/seeclassmates">
                             <Button variant="contained" color="success">See-classmates</Button>
+
+                        </Link>
+                        <br /><br />
+                        <Link to={`${url}/testscores`}>
+                            <Button variant="contained" color="success">TestScores</Button>
 
                         </Link>
                         <br /><br />
@@ -229,6 +243,9 @@ function Dashboard(props) {
                         </Route>
                         <Route path={`${path}/routine`}>
                             <Routine></Routine>
+                        </Route>
+                        <Route path={`${path}/testscores`}>
+                            <TestScores></TestScores>
                         </Route>
 
                     </Switch>
