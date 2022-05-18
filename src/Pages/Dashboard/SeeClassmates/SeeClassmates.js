@@ -8,7 +8,7 @@ const SeeClassmates = () => {
     const [classmates, setClassmates] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/students/all')
+        fetch('https://quiet-headland-26418.herokuapp.com/students/all')
             .then(res => res.json())
             .then(data => setClassmates(data))
     }, []);

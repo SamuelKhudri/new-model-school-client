@@ -7,7 +7,7 @@ const ShowTeacher = () => {
     const [review, setReview] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/teacher')
+        fetch('https://quiet-headland-26418.herokuapp.com/teacher')
             .then(res => res.json())
             .then(data => setReview(data))
     }, []);

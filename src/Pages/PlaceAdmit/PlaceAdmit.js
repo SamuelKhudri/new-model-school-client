@@ -16,7 +16,7 @@ const PlaceAdmit = () => {
 
     // this is for grtting id based use
     useEffect(() => {
-        const url = `http://localhost:5000/faculties/${id}`;
+        const url = `https://quiet-headland-26418.herokuapp.com/faculties/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -27,7 +27,7 @@ const PlaceAdmit = () => {
         // const savedCart = getStoredCart();
         // data.order = savedCart;
         console.log(data);
-        fetch('http://localhost:5000/students', {
+        fetch('https://quiet-headland-26418.herokuapp.com/students', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

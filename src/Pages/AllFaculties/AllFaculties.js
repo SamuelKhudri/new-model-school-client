@@ -4,7 +4,7 @@ import ShowAllFaculties from '../ShowAllFaculties/ShowAllFaculties';
 const AllFaculties = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/faculties')
+        fetch('https://quiet-headland-26418.herokuapp.com/faculties')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

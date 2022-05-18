@@ -13,7 +13,7 @@ const SeeMasseges = () => {
 
     // get massege data by login email of students
     useEffect(() => {
-        const url = `http://localhost:5000/masseges?email=${user.email}`
+        const url = `https://quiet-headland-26418.herokuapp.com/masseges?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setMasseges(data));
@@ -23,7 +23,7 @@ const SeeMasseges = () => {
     const handleDelMassege = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/masseges/${id}`;
+            const url = `https://quiet-headland-26418.herokuapp.com/masseges/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

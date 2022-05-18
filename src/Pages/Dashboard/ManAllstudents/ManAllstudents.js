@@ -15,7 +15,7 @@ const ManAllstudents = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/students/all')
+        fetch('https://quiet-headland-26418.herokuapp.com/students/all')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
@@ -24,7 +24,7 @@ const ManAllstudents = () => {
     const handleDelorder = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/students/all/${id}`;
+            const url = `https://quiet-headland-26418.herokuapp.com/students/all/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

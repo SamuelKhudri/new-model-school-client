@@ -8,7 +8,7 @@ const ManageFaculties = () => {
     const [products, setProducts] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/faculties')
+        fetch('https://quiet-headland-26418.herokuapp.com/faculties')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -18,7 +18,7 @@ const ManageFaculties = () => {
     const handleDelproducts = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/faculties/${id}`;
+            const url = `https://quiet-headland-26418.herokuapp.com/faculties/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

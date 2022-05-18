@@ -8,7 +8,7 @@ const SeeSubjects = () => {
     const [subjects, setSubjects] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/subjects')
+        fetch('https://quiet-headland-26418.herokuapp.com/subjects')
             .then(res => res.json())
             .then(data => setSubjects(data))
     }, []);

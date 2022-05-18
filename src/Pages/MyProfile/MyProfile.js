@@ -10,7 +10,7 @@ const MyProfile = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/students?email=${user.email}`
+        const url = `https://quiet-headland-26418.herokuapp.com/students?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data));
@@ -20,7 +20,7 @@ const MyProfile = () => {
     const handleDelUser = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/students/${id}`;
+            const url = `https://quiet-headland-26418.herokuapp.com/students/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

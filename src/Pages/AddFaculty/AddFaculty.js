@@ -10,7 +10,7 @@ const AddFaculty = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/faculties', data)
+        axios.post('https://quiet-headland-26418.herokuapp.com/faculties', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');

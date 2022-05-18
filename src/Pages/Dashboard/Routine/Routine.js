@@ -15,7 +15,7 @@ const Routine = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/routine', data)
+        axios.post('https://quiet-headland-26418.herokuapp.com/routine', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -25,7 +25,7 @@ const Routine = () => {
     }
     // fetch all notice to manage it 
     useEffect(() => {
-        fetch('http://localhost:5000/routine')
+        fetch('https://quiet-headland-26418.herokuapp.com/routine')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, []);
@@ -34,7 +34,7 @@ const Routine = () => {
     const handleDelRoutine = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/routine/${id}`;
+            const url = `https://quiet-headland-26418.herokuapp.com/routine/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

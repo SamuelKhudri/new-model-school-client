@@ -16,7 +16,7 @@ const Navbar = () => {
     // Masseges fetch based on email because of showing cart
     const [massege, setMassege] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/masseges?email=${user.email}`
+        const url = `https://quiet-headland-26418.herokuapp.com/masseges?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setMassege(data));

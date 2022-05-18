@@ -15,7 +15,7 @@ const AddTeacher = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/teacher', data)
+        axios.post('https://quiet-headland-26418.herokuapp.com/teacher', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -25,7 +25,7 @@ const AddTeacher = () => {
     }
     // fetch all notice to manage it 
     useEffect(() => {
-        fetch('http://localhost:5000/teacher')
+        fetch('https://quiet-headland-26418.herokuapp.com/teacher')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, []);
@@ -34,7 +34,7 @@ const AddTeacher = () => {
     const handleDelRoutine = id => {
         const proceed = window.confirm('Are you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/teacher/${id}`;
+            const url = `https://quiet-headland-26418.herokuapp.com/teacher/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

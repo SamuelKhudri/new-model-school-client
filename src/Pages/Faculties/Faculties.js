@@ -5,7 +5,7 @@ import './Faculties.css';
 const Faculties = () => {
     const [faculties, setFaculties] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/faculties')
+        fetch('https://quiet-headland-26418.herokuapp.com/faculties')
             .then(res => res.json())
             .then(data => setFaculties(data))
     }, []);

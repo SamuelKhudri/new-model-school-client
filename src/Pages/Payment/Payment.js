@@ -12,7 +12,7 @@ const Payment = () => {
     const { orderId } = useParams()
     const [payment, setPayment] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/students/${orderId}`)
+        fetch(`https://quiet-headland-26418.herokuapp.com/students/${orderId}`)
             .then(res => res.json())
             .then(data => setPayment(data));
     }, [orderId]);

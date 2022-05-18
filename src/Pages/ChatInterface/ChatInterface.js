@@ -17,7 +17,7 @@ const ChatInterface = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/masseges', data)
+        axios.post('https://quiet-headland-26418.herokuapp.com/masseges', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -29,7 +29,7 @@ const ChatInterface = () => {
 
     // this is for grtting id based use
     useEffect(() => {
-        const url = `http://localhost:5000/students/${id}`;
+        const url = `https://quiet-headland-26418.herokuapp.com/students/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setReceivers(data))
@@ -40,7 +40,7 @@ const ChatInterface = () => {
     // const handleDelMassege = id => {
     //     const proceed = window.confirm('Are you want to delete?');
     //     if (proceed) {
-    //         const url = `http://localhost:5000/masseges/${id}`;
+    //         const url = `https://quiet-headland-26418.herokuapp.com/masseges/${id}`;
     //         fetch(url, {
     //             method: 'DELETE'
     //         })

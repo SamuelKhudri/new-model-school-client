@@ -6,7 +6,7 @@ const ShowNotice = () => {
     const [notices, setNotices] = useState([])
     // fake data call-------------
     useEffect(() => {
-        fetch('http://localhost:5000/routine')
+        fetch('https://quiet-headland-26418.herokuapp.com/routine')
             .then(res => res.json())
             .then(data => setNotices(data))
     }, []);

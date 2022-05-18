@@ -24,7 +24,7 @@ const CheckoutForm = ({ payment }) => {
 
    // payment fetch-------
    useEffect(() => {
-      fetch('http://localhost:5000/create-payment-intent', {
+      fetch('https://quiet-headland-26418.herokuapp.com/create-payment-intent', {
          method: 'POST',
          headers: {
             'content-type': 'application/json'
@@ -95,7 +95,7 @@ const CheckoutForm = ({ payment }) => {
             last4: paymentMethod.card.last4,
             transaction: paymentIntent.client_secret.slice('_secret')[0]
          }
-         const url = `http://localhost:5000/students/${_id}`;
+         const url = `https://quiet-headland-26418.herokuapp.com/students/${_id}`;
          fetch(url, {
             method: 'PUT',
             headers: {
